@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="ecole.Resultats" table="RESULTATS">
+    <composite-id name="compId" class="ecole.Resultats">
+        <key-property name="id_eleves" column="NUM_ELEVE" type="Long int"/>
+        <key-property name="id_cours" column="NUM_COURS" type="Long int "/>
+    </composite-id>
+	
+
+    <property name ="points" column="POINTS" type="int"/>
+
+      <many-to-one name="Eleve" column="NUM_ELEVE"/>
+      <many-to-one name="Cours" column="NUM_COURS"/>
+</class>
+
+</hibernate-mapping>
+
+

@@ -1,0 +1,549 @@
+body
+{
+	background-image: url(images/design.jpg);
+	background-repeat:no-repeat;
+		font-family: Arial;
+	width:70%;
+	font-size: 13px;
+}
+
+/*  Head */
+
+#pp_im
+{
+	top :20%;
+	margin-left:50%;
+	margin-top:20%;
+}
+#pp_titre
+{
+	border : 0px;
+	text-align : justify;
+	font-size: 44px;
+	color: white;
+	font-family:Freestyle Script;
+	padding-left :60%;
+	width:40%;
+	height: 25px;
+	position:relative;
+	margin-top :-8%;
+}
+
+/*Accueil*/
+
+#connexion
+{
+	border: 1px solid #999;
+	border-bottom-color:#999;
+	margin-left:60%;
+	margin-top: 6%;
+	border-bottom: 1px;
+	color: white;
+	width:22%;
+	height:30%;
+	font-size:14px;
+	position:relative;
+	padding-left:5%;
+      box-shadow:0px 0px 4px #BBCCD4;
+    margin-bottom: 15px;
+	border-radius: 10px;
+
+}
+/*.champ
+{
+margin-left:50%;
+left: 30%;
+}*/
+#con_button
+{
+	color:#09F;
+}
+
+/*etudinant*/
+#etud_img
+{
+margin-top: -1.5%;	
+}
+#banner_dark
+{
+background-color:#000;
+height:10%;
+width:144%;
+border:1px; 
+margin-top :1%;
+margin-left:-1%;
+margin-bottom: 15px;
+border: 1px #666	;
+}
+#pptg_titre
+{
+	border : 0px;
+	text-align : justify;
+	font-size:18px;
+	color: white;
+	font-family:Arial ,Freestyle Script;
+	padding-right :40%;
+	width:120%;
+	height: 25px;
+	position:relative;
+	margin-top :0%;
+	left: -401%;
+}
+#pptg_nom
+{
+	color : white ;
+	left:-100%;
+	position:relative;
+	width:150%;
+	padding-top:-20%;
+	
+}
+
+
+nav li
+{
+    display: inline-block;
+	width:100px;
+	text-align:center;
+}
+
+nav li:hover
+{
+	display: inline-block;
+    width: 210px;
+}
+
+nav a
+{
+    font-size: 1.5em;
+    color: black;
+    padding-bottom: 1px;
+	text-decoration:none;
+}
+
+nav a:hover
+{
+    color: blue ;
+	 text-decoration:none;
+}
+
+#banner_menu
+{
+	background-color:#BBCCD4;
+   	color :#008080, white;    
+   	z-index:1;
+	border: 1px solid #BBCCD4 ;
+	width:15%;
+	height:18%;
+	padding-left:-10%;
+	position: absolute;
+	left:5%; 
+	top: 150px;
+	box-shadow: 0px 0px 4px #BBCCD4;
+
+}
+
+
+#banner_menu ul /* Liste */    
+{	
+		width:450px;
+        list-style : none; /* on supprime le style par défaut de la liste */      
+        text-align :left; /* on centre le texte qui se trouve dans la liste */
+}
+#banner_menu li
+{
+    display: inline-block;
+	width:50%;
+	left:1%;
+	position:relative;
+	text-align:justify;
+}
+
+#banner_menu li:hover{
+background-color:#BBCCD4;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px
+width:20%;
+}
+
+
+ 
+#banner_menu a
+{
+font-size:14px;
+display : block; 
+color: white;
+padding-bottom:1px ;
+text-decoration:none;
+width:100%;
+}
+
+
+#banner_menu a:hover
+{
+ color:#008080;
+
+}
+
+
+#section_etudiant
+{
+	color :#008080, white;    
+   	z-index:1;
+	border: 1px solid #BBCCD4 ;
+	width:60%;
+	height:90%;
+	padding-left:-10%;
+	position:absolute;
+	left:25%; 
+	top: 140px;
+	box-shadow: 0px 0px 4px #BBCCD4;	
+}
+a
+{
+	text-decoration:none;
+	color: white ;
+}
+a:hover{
+	color:#099;
+	
+}
+
+
+/*******************Menu *****************/
+#menu
+{
+    color :#008080, white;
+    border-radius:0px;
+    z-index:1;
+	border: 0px ;
+	width:100%;
+	height: 30px;
+	position: relative;
+	left:0%;
+  
+    margin-bottom: 0px ;
+	background-color:#BBCCD4;
+	border-radius: 1px;
+	top :-2%;
+	padding-top:-10%;
+
+}
+
+#menu ul /* Liste */    
+{	
+		width:200%;
+        list-style : none; /* on supprime le style par d�faut de la liste */      
+        text-align :left; /* on centre le texte qui se trouve dans la liste */
+}
+#menu li
+{
+    display: inline-block;
+	width:12%;
+	left: 500px;
+	text-align:justify;
+}
+
+
+ 
+#menu a
+{
+font-size: 16px;
+display : block; 
+
+color: white;
+padding-bottom:  1px ;
+	text-decoration:none;
+	width: 100%;
+}
+
+#menu a:hover
+{
+	color: #008080;
+}
+/*******Admin*******************/
+
+#menu_admin
+{
+    
+    border-radius:0px;
+    z-index:1;
+	border: 0px ;
+	width:100%;
+	height: 30px;
+	position: relative;
+	left:0%;
+    margin-bottom: 0px ;
+	background-color:#BBCCD4;
+	border-radius: 1px;
+	top :-2%;
+	padding-top:-10%;
+	color : white;
+	font-size: 12px;
+
+}
+
+
+#menu_admin ul
+{
+        list-style : none; /* on supprime le style par défaut de la liste */      
+        text-align : justify; /* on centre le texte qui se trouve dans la liste */
+}
+#menu_admin li
+{
+    display: inline-block;
+	width:150px;
+	text-align:left;
+	font-size:12px;
+	padding-left:-10%;
+	color: #FFF;
+	
+}
+#menu_admin li:hover 
+{
+	display: inline-block;
+    width:150px;
+	
+}
+#menu_admin li:hover ul,#menu_admin li li:hover ul, #menu_admin li.sfhover ul, #menu_admin li li.sfhover ul  /* Sous-listes lorsque la souris passe sur un élément de liste ET sous-sous-lites lorsque la souris passe sur un élément de sous-liste */
+{
+       /* top :100%;*/
+	    left: auto; /* Repositionnement normal */
+        min-height: 0; /* Corrige un bug sous IE */
+		animation-direction:normal;
+	  	
+}
+
+#menu_admin a
+{
+	display : block; 
+    font-size: 15px;
+    color: white;
+    padding-bottom: 3px;
+	text-decoration:none;
+	width: 200px;
+}
+
+#menu_admin a:hover
+{
+    color: #008080;
+}
+
+#menu_admin li ul 
+{
+        position: absolute; 
+        width:18%; 
+	
+        left: -998em; 
+		background-color:#BBCCD4;
+		border-radius: 5px;
+		font-size:12px; 
+		font-color:white;
+		border: 1px solid #BBCCD4;
+      	border-bottom-color:#BBCCD4;
+		box-shadow: 0px 0px 4px #BBCCD4;
+}
+
+#menu_admin li ul li
+{
+	    padding-left:-20%;
+        border-top : 1px solid #fff; 
+		font-size:11px; 
+		border-left: -50px;
+		color: white;
+		margin-left:-10%;
+
+}
+
+/********  Admin */
+#im_edit
+{	
+		/*width:24%;
+		height:4%;*/
+	
+	border: 0px solid #BBCCD4;
+      	border-bottom-color:#BBCCD4;
+
+		margin-left:20%;
+}
+#im_supp
+{
+				/*height:5%;*/
+		position:relative;
+	    border: 0px solid #BBCCD4;
+      	border-bottom-color:#BBCCD4;
+	
+		margin-left:25%;
+		margin-top:-38px;
+	
+}
+
+
+#mes_actv1
+{
+   	color:#008080, white;    
+   	z-index:1;
+	border:1px solid #BBCCD4 ;
+	width:40%;
+	height:35%;
+	padding-left:0%;
+	position: relative;
+	left:5%; 
+	top:-25%;
+	box-shadow: 0px 0px 4px #BBCCD4;	
+}
+
+
+#mes_resu1
+{
+   	color :#008080, white;    
+   	z-index:1;
+	border: 1px  solid #BBCCD4;
+	width:40%;
+	height:35%;
+	position:relative;
+	left:50%; 
+	top:-60%;
+	box-shadow:0px 0px 4px #BBCCD4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************************/
+#profil-etud
+{
+    color :#008080, white;
+    border-radius:0px;
+    z-index:1;
+	border: 0px ;
+
+	height: 40%;
+	position: relative;
+	left:0%;
+    box-shadow: 0px 4px 4px #BBCCD4;
+    margin-bottom: 0px ;
+	background-color:#008080;
+	border-radius: 1px;
+	padding-top:-7%;
+	padding-left: 5%;	
+	
+}
+
+#mes_actv
+{
+   	color:#008080, white;    
+   	z-index:1;
+	border:1px solid #BBCCD4 ;
+	width:40%;
+	height:35%;
+	padding-left:0%;
+	position: relative;
+	left:5%; 
+	top:0%;
+	box-shadow: 0px 0px 4px #BBCCD4;	
+}
+
+
+#mes_resu
+{
+   	color :#008080, white;    
+   	z-index:1;
+	border: 1px  solid #BBCCD4;
+	width:40%;
+	height:35%;
+	position:relative;
+	left:50%; 
+	top:-35%;
+	box-shadow:0px 0px 4px #BBCCD4;
+}
+#im_sport
+{
+    color :#008080, white;    
+   	z-index:1;
+	border: 1px  solid #BBCCD4;
+	width:100%;
+	height:15%;
+	position:relative;
+	left:0%; 
+	top:0%;
+	box-shadow:0px 0px 4px #BBCCD4;
+	
+}
+#ensei_img
+{
+	color :#008080, white;    
+   	z-index:1;
+	border: 1px  solid #BBCCD4;
+	width:15%;
+	height:65%;
+	position:absolute;
+	left:5%; 
+	top:50%;
+	box-shadow:0px 0px 4px #BBCCD4;
+	
+}
+
+
+#contact
+{
+	padding-left:0%;
+	padding-top:2%;
+	color : white;
+    border-radius:0px;
+    z-index:1;
+	border: 2px solid plack;
+	width:100%;
+	height:60%;
+	position: relative;
+	left:0%;
+    box-shadow:0px 0px 4px #BBCCD4;
+    margin-bottom: 2px ;
+	background-color:#008080;
+	border-radius:3px;
+	top : -10px;
+}
+/***Admin**/
+
+
+.footer
+{
+   border: 0px solid #A47140;
+	
+	left :25%;
+	width:60%;
+	height:25px; 
+	font-family : arial;
+	text-align: center;
+	margin-top: 0px;
+	font-size:12px;
+	border-radius: 5px; 
+	margin-bottom:15px;
+	box-shadow: 6px 6px 6px #1c1a19;
+	position: absolute;
+	right:20px;
+	top:120%;
+	color:#BBCCD4;
+}

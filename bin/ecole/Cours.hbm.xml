@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="ecole.Cours" table="COURS">
+        <id name="id" column=" NUM_COURS ">
+            <generator class="native"/>
+        </id>
+
+        <property name="nom"  column ="NOM"/>
+	<property name="nb_heures" type="int" column ="NB_HEURES"/>
+	<property name="annee" type="int" column="ANNEE"/>
+
+    </class>
+
+
+</hibernate-mapping>
