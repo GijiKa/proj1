@@ -18,16 +18,14 @@
 </head>
 
 <body>
-	 <!-- declarer la JSTL -->
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<!-- declarer la JSTL -->
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<jsp:include page="head.jsp" />
 
 
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<div class="col-md-4">
-			
-			</div>
+			<div class="col-md-4"></div>
 
 
 		</div>
@@ -37,30 +35,18 @@
 
 			<div class="btn-group">
 
-				<a href="admin.jsp" type="button" class="btn btn-default">Accueil</a>
-
-				<a href="admin_prof.jsp" type="button" class="btn btn-default">Enseignants</a>
-
-				<a type="button" class="btn btn-default">Cours</a>
-
-				<a type="button" class="btn btn-default">Activités sportives</a>
+				<a type="button" class="btn btn-default">Accueil</a> <a
+					type="button" class="btn btn-default">Enseignants</a> <a
+					type="button" class="btn btn-default">Cours</a> <a type="button"
+					class="btn btn-default">Activités sportives</a>
 
 			</div>
 			<c:if test="false">
-				<div> Bienvenue dans la partie Admin</div>
+				<div>Bienvenue dans la partie Admin</div>
 			</c:if>
-			<c:if test="true">
-				<div id="tableContainerEleve"></div>
-			</c:if>
-			<c:if test="false">
-				<div id="tableContainerProfesseur"></div>
-			</c:if>
-			<c:if test="false">
-				<div id="tableContainerCours"></div>
-			</c:if>
-			<c:if test="false">
-				<div id="tableContainerActivite"></div>
-			</c:if>
+
+			<div id="tableContainerProfesseurs"></div>
+
 		</div>
 
 	</div>
@@ -75,13 +61,13 @@
 	<script src="js/jquery.jtable.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#tableContainerEleve').jtable({
-				title : 'Gestion des élèves',
+			$('#tableContainerProfesseurs').jtable({
+				title : 'Gestion des professeurs',
 				actions : {
-					listAction : 'admin?action=list',
-					createAction : 'admin?action=create',
-					updateAction : 'admin?action=update',
-					deleteAction : 'admin?action=delete'
+					listAction : 'adminprof?action=list',
+					createAction : 'adminprof?action=create',
+					updateAction : 'adminprof?action=update',
+					deleteAction : 'adminprof?action=delete'
 				},
 				fields : {
 
@@ -93,27 +79,27 @@
 						title : 'Nom',
 						width : '20%'
 					},
-					prenom : {
-						title : 'Prenom',
+					specialite : {
+						title : 'Specialite',
 						width : '20%'
 					},
-					email : {
-						title : 'email',
+					date_entree : {
+						title : 'Date d\'entrée',
 						width : '20%'
 					},
-					date_naiss : {
-						title : 'Date de naissance',
+					der_prom : {
+						title : 'Dérnière promo',
 						width : '30%',
 						create : false,
 						edit : false
 					},
-					poids : {
-						title : 'Poids',
+					salaire_base : {
+						title : 'Salaire de base',
 						width : '20%',
 
 					},
-					annee : {
-						title : 'Annee',
+					salaire_actuel : {
+						title : 'Salaire actuel',
 						width : '20%',
 
 					},
@@ -121,11 +107,20 @@
 						title:"mot de passe",
 						list:false,
 						edit:false
+					},
+					email:{
+						title:"Email",
+						edit:true
+					},
+					role:{
+						title:"Role",
+						list:false,
+						edit:false
 					}
 
 				}
 			});
-			$('#tableContainerEleve').jtable('load');
+			$('#tableContainerProfesseurs').jtable('load');
 		});
 	</script>
 </body>

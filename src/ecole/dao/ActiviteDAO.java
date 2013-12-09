@@ -13,7 +13,7 @@ import ecole.pojo.Activite;
 public class ActiviteDAO implements IDAO<Activite> {
 
 	@Override
-	public Activite find(long id) {
+	public Activite find(int id) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Activite Activite =  (Activite) session.get(Activite.class, id);

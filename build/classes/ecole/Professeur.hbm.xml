@@ -7,7 +7,7 @@
 
     <class name="ecole.pojo.Professeur" table="professeurs">
         <id name="id" column="NUM_PROF">
-            <generator class="native"/>
+            <generator class="increment"/>
         </id>
         <property name="nom"  column="NOM"/>
         <property name="specialite" column="specialite"/>

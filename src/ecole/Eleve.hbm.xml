@@ -7,7 +7,7 @@
 
     <class name="ecole.pojo.Eleve" table="eleves">
         <id name="id" column="NUM_ELEVE">
-            <generator class="native"/>
+            <generator class="increment"/>
         </id>
         
        	

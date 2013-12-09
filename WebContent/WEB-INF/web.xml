@@ -3,8 +3,6 @@
   <welcome-file-list>
     <welcome-file>/index.jsp</welcome-file>
   </welcome-file-list>
-  
-  
   <servlet>
     <servlet-name>auth</servlet-name>
     <servlet-class>ecole.AuthServlet</servlet-class>
@@ -13,18 +11,34 @@
     <servlet-name>auth</servlet-name>
     <url-pattern>/auth</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>ElevesServlet</servlet-name>
     <servlet-class>ecole.ElevesServlet</servlet-class>
   </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>ecole.AdminServlet</servlet-class>
+  </servlet>
+  
+    <servlet-mapping>
+    <servlet-name>AdminProfServlet</servlet-name>
+    <url-pattern>/adminprof</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminProfServlet</servlet-name>
+    <servlet-class>ecole.AdminProfServlet</servlet-class>
+  </servlet>
+  
+  
   <servlet-mapping>
     <servlet-name>ElevesServlet</servlet-name>
     <url-pattern>/ElevesServlet</url-pattern>
   </servlet-mapping>
-  
-  
-  
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>

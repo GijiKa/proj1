@@ -13,7 +13,7 @@ import ecole.pojo.Resultat;
 public class ResultatDAO implements IDAO<Resultat> {
 
 	@Override
-	public Resultat find(long id) {
+	public Resultat find(int id) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Resultat Resultat =  (Resultat) session.get(Resultat.class, id);
@@ -77,8 +77,4 @@ public class ResultatDAO implements IDAO<Resultat> {
 	      }
 		
 	}
-
-
-	
-
 }

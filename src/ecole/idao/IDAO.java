@@ -1,7 +1,7 @@
 package ecole.idao;
 
 public interface IDAO<T> {
-	public abstract T find(long id);
+	public abstract T find(int id);
 
 	/**
 	 * Permet de créer une entrée dans la base de données par rapport à un objet
