@@ -7,7 +7,7 @@
   
   <servlet>
     <servlet-name>auth</servlet-name>
-    <servlet-class>ecole.auth</servlet-class>
+    <servlet-class>ecole.AuthServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>auth</servlet-name>

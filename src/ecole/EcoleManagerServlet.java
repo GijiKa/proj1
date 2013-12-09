@@ -1,11 +1,17 @@
 package ecole;
 
-import util.HibernateUtil;
-import javax.servlet.http.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.List;
+
 import javax.servlet.ServletException;
-import java.io.*;
-import java.util.*;
-import java.text.SimpleDateFormat;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import util.HibernateUtil;
+import ecole.pojo.Eleve;
 
 
 public class EcoleManagerServlet extends HttpServlet {
@@ -14,32 +20,6 @@ public class EcoleManagerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request,HttpServletResponse response)
             throws ServletException, IOException {
 
-        try {
-            // Begin unit of work
-            HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction(); //créer une session
-
-            // Write HTML header
-            PrintWriter out = response.getWriter(); 
-            out.println("<html><head><title>Bienvenue sur notre Portail pédagogique TGSchool ! </title></head><body>");
-
-          
-            // Print page
-            printSchool(out);
-            listEleves(out);
-
-            // Write HTML footer
-            out.println("</body></html>");
-            out.flush();
-            out.close();
-
-            // End unit of work
-            HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
-
-        } catch (Exception ex) {
-            HibernateUtil.getSessionFactory()
-                    .getCurrentSession().getTransaction().rollback();
-            throw new ServletException(ex);
-        }
     }
 
     private void printSchool(PrintWriter out) {
@@ -50,7 +30,7 @@ public class EcoleManagerServlet extends HttpServlet {
 
     private void listEleves(PrintWriter out)
 {
-        List result = HibernateUtil.getSessionFactory().getCurrentSession().createCriteria(Eleves.class).list();
+        List result = HibernateUtil.getSessionFactory().getCurrentSession().createCriteria(Eleve.class).list();
 
 
         if (result.size() > 0) 
@@ -64,7 +44,7 @@ public class EcoleManagerServlet extends HttpServlet {
             out.println("</tr>");
             for (Iterator it = result.iterator(); it.hasNext();)
 		{
-                Eleves e = (Eleves) it.next();
+                Eleve e = (Eleve) it.next();
                 out.println("<tr>");
                 out.println("<td>" + e.getId() + "</td>");
                 out.println("<td>" + e.getNom() + "</td>");

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="ecole.pojo.Eleve" table="eleves">
+        <id name="id" column="NUM_ELEVE">
+            <generator class="native"/>
+        </id>
+        
+       	
+		
+		
+    <property name="nom"  column ="NOM"/>
+	<property name="prenom"  column ="PRENOM"/>
+    <property name="date_naiss" type="date" column="DATE_NAISSANCE"/>
+	<property name="poids" type="int" column="POIDS"/>
+	<property name="annee" type="int" column="ANNEE"/>
+	<property name="role" type="int" column="role"/>
+	<property name="mdp"  column ="mdp"/>
+	<property name="email"  column ="email"/>
+	
+
+
+    </class>
+    <class name="ecole.Cours" table="cours">
+        <id name="id" column="NUM_COURS">
+            <generator class="native"/>
+        </id>
+
+        <property name="nom"  column ="NOM"/>
+	<property name="nb_heures" type="int" column ="NBHEURES"/>
+	<property name="annee" type="int" column="ANNEE"/>
+	
+	
+
+	
+	
+
+    </class>
+
+</hibernate-mapping>

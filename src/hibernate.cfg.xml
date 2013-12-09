@@ -10,9 +10,9 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost/ecole</property>
+        <property name="connection.url">jdbc:mysql://localhost/test</property>
         <property name="connection.username">root</property>
-        <property name="connection.password"></property>
+        <property name="connection.password">root</property>
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
@@ -32,8 +32,8 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping resource="ecole/Eleves.hbm.xml"/>
-       <mapping resource="ecole/Professeurs.hbm.xml"/>
+       <mapping resource="ecole/Eleve.hbm.xml"/>
+       <mapping resource="ecole/Professeur.hbm.xml"/>
        
        
      <!--

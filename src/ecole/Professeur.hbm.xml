@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="ecole.pojo.Professeur" table="professeurs">
+        <id name="id" column="NUM_PROF">
+            <generator class="native"/>
+        </id>
+        <property name="nom"  column="NOM"/>
+        <property name="specialite" column="specialite"/>
+        <property name="date_entree" type="date" column="DATE_ENTREE"/>
+	<property name="der_prom" type="date" column="DER_PROM"/>
+	<property name="salaire_base" type="int" column="SALAIRE_BASE"/>
+	<property name="salaire_actuel" type="int" column="SALAIRE_ACTUEL"/>
+
+	<property name="role" type="int" column="role"/>
+	 <property name="mdp"  column ="mdp"/>
+	  <property name="email"  column ="email"/>
+
+
+    </class>
+
+</hibernate-mapping>

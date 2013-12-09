@@ -4,6 +4,8 @@ import util.HibernateUtil;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
+import ecole.pojo.Eleve;
+
 import java.io.*;
 import java.util.*;
 
@@ -57,22 +59,22 @@ public class ElevesServlet extends HttpServlet {
     private void listEleves(PrintWriter out)
 {
         @SuppressWarnings("rawtypes")
-		List result = HibernateUtil.getSessionFactory().getCurrentSession().createCriteria(Eleves.class).list();
+		List result = HibernateUtil.getSessionFactory().getCurrentSession().createCriteria(Eleve.class).list();
 
 
         if (result.size() > 0) 
          {
-            out.println("<h2>La liste des Elèves :</h2>");
+            out.println("<h2>La liste des Elï¿½ves :</h2>");
             out.println("<table border='1'>");
             out.println("<tr>");
             out.println("<th>Identifiant</th>");
             out.println("<th>Nom</th>");
-	        out.println("<th>Prénom </th>");
+	        out.println("<th>Prï¿½nom </th>");
             out.println("</tr>");
             for (@SuppressWarnings("rawtypes")
 			Iterator it = result.iterator(); it.hasNext();)
 		{
-                Eleves e = (Eleves) it.next();
+                Eleve e = (Eleve) it.next();
                 out.println("<tr>");
                 out.println("<td>" + e.getId() + "</td>");
                 out.println("<td>" + e.getNom() + "</td>");
