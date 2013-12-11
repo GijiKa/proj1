@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC
-        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
 
@@ -20,7 +19,14 @@
 	 <property name="mdp"  column ="mdp"/>
 	  <property name="email"  column ="email"/>
 
-
+ 	 <set name="courses" table="charge"  inverse="false" lazy="false" fetch="select">
+            <key>
+                <column name="NUM_PROF" not-null="true" />
+            </key>
+            <many-to-many entity-name="ecole.pojo.Cours">
+                <column name="NUM_COURS" not-null="true" />
+            </many-to-many>
+        </set>
     </class>
 
 </hibernate-mapping>

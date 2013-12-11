@@ -1,17 +1,22 @@
 <?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC
-        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
     <class name="ecole.pojo.Resultat" table="resultats">
-    <composite-id name="compId" class="ecole.pojo.Resultat">
-        <key-property name="id_eleve"  type="int" column="NUM_ELEVE" />
-        <key-property name="id_cours"  type="int"  column="NUM_COURS"/>
-    </composite-id>
-	
-
-    <property name ="points" type="int" column="POINTS" />
-</class>
-
+       
+       
+        <composite-id name="id" class="ecole.pojo.ResultatsId">
+            <key-many-to-one name="Eleve" class="ecole.pojo.Eleve" 
+            column="NUM_ELEVE"></key-many-to-one>
+            <key-property name="id_cours" type="int">
+                <column name="NUM_COURS" />
+            </key-property>
+        </composite-id>
+        
+ 
+        <property name="note" type="int">
+            <column name="NOTE" />
+        </property>
+    </class>
 </hibernate-mapping>

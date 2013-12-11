@@ -1,5 +1,6 @@
 package ecole.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -10,12 +11,17 @@ import org.hibernate.criterion.Restrictions;
 
 import util.HibernateUtil;
 import ecole.idao.IDAO;
+import ecole.pojo.Cours;
 import ecole.pojo.Eleve;
+import ecole.pojo.Resultat;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class EleveDAO implements IDAO<Eleve> {
 
 	@Override
-	public Eleve find(int id) {
+	public Eleve find(Serializable id) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		Eleve eleve = null;
@@ -36,7 +42,43 @@ public class EleveDAO implements IDAO<Eleve> {
 
 		return eleve;
 	}
+	 
+	
+	public  Set<Resultat>   getAllCoursById(Eleve obj)
+	{
+		
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Eleve eleve = null;
+		   List<Cours> lc ;
+		
+		   
+		   Set<Resultat>  res=null;
+	 
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			
+			  res =obj.getResultatses();
 
+			tx.commit();
+			
+			
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+		}
+
+		return res;
+		
+		
+		
+		
+	}
+		
+	
+	
 	@Override
 	public Eleve create(Eleve obj) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -123,5 +165,28 @@ public class EleveDAO implements IDAO<Eleve> {
 
 		return eleves;
 	}
+	public List<Resultat> getAllResultats(int id_eleve) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction tx = null;
+		List<Resultat> res = null;
+		try {
+			tx = session.beginTransaction();
+
+			res = (List<Resultat>) session
+					.createQuery(
+							"select eleve.resultatses from Eleve eleve where "+id_eleve+"=eleve.id")
+					.list();
+
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+		}
+
+		return res;
+	}
+
 
 }

@@ -47,7 +47,7 @@
 			</div>
 
 
-			<div id="tableContainerEleve"></div>
+			<div id="tableContainerCours"></div>
 
 		</div>
 
@@ -63,13 +63,14 @@
 	<script src="js/jquery.jtable.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#tableContainerEleve').jtable({
-				title : 'Gestion des élèves',
+			$('#tableContainerCours').jtable({
+
+				title : 'Gestion des cours',
 				actions : {
-					listAction : 'admin?action=list',
-					createAction : 'admin?action=create',
-					updateAction : 'admin?action=update',
-					deleteAction : 'admin?action=delete'
+					listAction : 'admincours?action=list',
+					createAction : 'admincours?action=create',
+					updateAction : 'admincours?action=update',
+					deleteAction : 'admincours?action=delete',
 				},
 				fields : {
 
@@ -79,44 +80,21 @@
 					},
 					nom : {
 						title : 'Nom',
-						width : '20%',
-						display : function(data) {
-							 return "<a href='admin_resultats_eleve.jsp?id="+data.record.id+"'>"+data.record.nom+"</a>"
-						}
-					},
-					prenom : {
-						title : 'Prenom',
 						width : '20%'
 					},
-					email : {
-						title : 'email',
-						width : '20%'
-					},
-					date_naiss : {
-						title : 'Date de naissance',
-						width : '30%',
-						create : false,
-						edit : false
-					},
-					poids : {
-						title : 'Poids',
-						width : '20%',
 
+					nb_heures : {
+						title : 'nombre heures',
+						width : '20%'
 					},
 					annee : {
 						title : 'Annee',
-						width : '20%',
-
-					},
-					mdp : {
-						title : "mot de passe",
-						list : false,
-						edit : false
+						width : '20%'
 					}
-
 				}
+
 			});
-			$('#tableContainerEleve').jtable('load');
+			$('#tableContainerCours').jtable('load');
 		});
 	</script>
 </body>

@@ -65,20 +65,17 @@ public class AdminProfServlet extends HttpServlet {
 				String str1= request.getParameter("date_entree");
 				String str2= request.getParameter("der_prom");
 				DateFormat formatter ; 
-				Date date1,date2 ; 
-				
-				   formatter = new SimpleDateFormat("yyyy-MM-DD");
+				Date date1=null,date2=null ; 
+				   formatter = new SimpleDateFormat("MMM dd, yyyy");
 				   try {
-					   if(!str1.equals("")){
-						   date1 = formatter.parse(str1);
-						   professeur.setDate_entree(date1);}
-					
-					   if(!str2.equals("")){
-					date2 = formatter.parse(str2);					
+					if(str1!=null)
+						date1 = formatter.parse(str1);
+					if(str2!=null)
+						date2 = formatter.parse(str2);
+					professeur.setDate_entree(date1);
 					professeur.setDer_prom(date2);
-					   }
 				} catch (ParseException e) {
-					System.out.println("======>");
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				
@@ -96,13 +93,16 @@ public class AdminProfServlet extends HttpServlet {
 				Professeur professeur=professeurDao.find(id);
 				professeur.setSpecialite(request.getParameter("specialite"));
 				String str1= request.getParameter("date_entree");
+				System.out.print("++++++++++"+ str1);
 				String str2= request.getParameter("der_prom");
 				DateFormat formatter ; 
-				Date date1,date2 ; 
-				   formatter = new SimpleDateFormat("yyyy-MM-DD");
+				Date date1=null,date2=null ; 
+				   formatter = new SimpleDateFormat("MMM dd, yyyy");
 				   try {
-					date1 = formatter.parse(str1);
-					date2 = formatter.parse(str2);
+					if(str1!=null)
+						date1 = formatter.parse(str1);
+					if(str2!=null)
+						date2 = formatter.parse(str2);
 					professeur.setDate_entree(date1);
 					professeur.setDer_prom(date2);
 				} catch (ParseException e) {

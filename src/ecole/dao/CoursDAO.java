@@ -1,5 +1,8 @@
 package ecole.dao;
 
+import java.io.Serializable;
+import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -9,15 +12,30 @@ import org.hibernate.criterion.Restrictions;
 import util.HibernateUtil;
 import ecole.idao.IDAO;
 import ecole.pojo.Cours;
+import ecole.pojo.Cours;
 
 public class CoursDAO implements IDAO<Cours> {
 
 	@Override
-	public Cours find(int id) {
+	public Cours find(Serializable id) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Cours Cours =  (Cours) session.get(Cours.class, id);
-		return Cours;
+	Transaction tx = null;
+	Cours cours=null;
+		
+		try {
+			tx = session.beginTransaction();
+      cours =  (Cours) session.get(Cours.class, id);
+        tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			
+		}
+		
+		return cours;
 	}
 
 	@Override
@@ -37,7 +55,7 @@ public class CoursDAO implements IDAO<Cours> {
 				tx.rollback();
 			e.printStackTrace();
 		} finally {
-			session.close();
+			
 		}
 		return obj;
 	}
@@ -54,7 +72,7 @@ public class CoursDAO implements IDAO<Cours> {
 	         if (tx!=null) tx.rollback();
 	         e.printStackTrace(); 
 	      }finally {
-	         session.close(); 
+	        
 	      }
 		return obj;
 	}
@@ -73,9 +91,30 @@ public class CoursDAO implements IDAO<Cours> {
 	         if (tx!=null) tx.rollback();
 	         e.printStackTrace(); 
 	      }finally {
-	         session.close(); 
+
 	      }
 		
+	}
+	
+
+	public List<Cours> getAll() {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction tx = null;
+		List<Cours> cours = null;
+		try {
+			tx = session.beginTransaction();
+
+			cours = session.createCriteria(Cours.class).list();
+
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+		}
+
+		return cours;
 	}
 
 	

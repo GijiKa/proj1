@@ -1,5 +1,7 @@
 package ecole.dao;
 
+import java.io.Serializable;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -9,35 +11,47 @@ import org.hibernate.criterion.Restrictions;
 import util.HibernateUtil;
 import ecole.idao.IDAO;
 import ecole.pojo.Resultat;
+import ecole.pojo.ResultatsId;
 
 public class ResultatDAO implements IDAO<Resultat> {
 
 	@Override
-	public Resultat find(int id) {
-		// TODO Auto-generated method stub
+	public Resultat find(Serializable id) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Resultat Resultat =  (Resultat) session.get(Resultat.class, id);
-		return Resultat;
-	}
-
-	@Override
-	public Resultat create(Resultat obj) {
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		Integer ResultatID = null;
 		Transaction tx = null;
-		
+		Resultat resultat=null;
 		try {
 			tx = session.beginTransaction();
 			// action
 	      
-	         ResultatID = (Integer) session.save(obj); 
+			resultat=  (Resultat) session.get(Resultat.class,id);
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)
 				tx.rollback();
 			e.printStackTrace();
 		} finally {
-			session.close();
+		}
+		return resultat;
+	}
+
+	@Override
+	public Resultat create(Resultat obj) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		ResultatsId ResultatID = null;
+		Transaction tx = null;
+		
+		try {
+			tx = session.beginTransaction();
+			// action
+	      
+	         ResultatID = (ResultatsId) session.save(obj); 
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
 		}
 		return obj;
 	}
@@ -54,7 +68,6 @@ public class ResultatDAO implements IDAO<Resultat> {
 	         if (tx!=null) tx.rollback();
 	         e.printStackTrace(); 
 	      }finally {
-	         session.close(); 
 	      }
 		return obj;
 	}
@@ -73,7 +86,6 @@ public class ResultatDAO implements IDAO<Resultat> {
 	         if (tx!=null) tx.rollback();
 	         e.printStackTrace(); 
 	      }finally {
-	         session.close(); 
 	      }
 		
 	}

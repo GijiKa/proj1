@@ -1,5 +1,7 @@
 package ecole.dao;
 
+import java.io.Serializable;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -13,7 +15,7 @@ import ecole.pojo.Activite;
 public class ActiviteDAO implements IDAO<Activite> {
 
 	@Override
-	public Activite find(int id) {
+	public Activite find(Serializable id) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Activite Activite =  (Activite) session.get(Activite.class, id);

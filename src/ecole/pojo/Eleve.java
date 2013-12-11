@@ -1,29 +1,39 @@
 package ecole.pojo;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import com.google.gson.annotations.Expose;
 
-import util.Encryption;
+public class Eleve  implements java.io.Serializable {
 
-public class Eleve {
-
-    private int  id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Expose
+	private int  id;
+	@Expose
     private String nom;
+	@Expose
     private String prenom;
+	@Expose
     private Date date_naiss;
+	@Expose
     private int poids ;
+	@Expose
     private int annee ;
+	@Expose
     private String mdp;
+	@Expose
     private String email;
-    private int role ;
-    private Set setcours;
+    private int role ; 
     
-
+    private Set<Resultat> resultatses = new HashSet<Resultat>(0);
 
     public Eleve() {}
-    public Eleve(int id , String nom, String  prenom , Date date_naiss , int  poids , int annee ) 
+    public Eleve(int id , String nom, String  prenom , Date date_naiss , int  poids , int annee ,Set<Resultat> resultatses) 
     {
 	this.id = id ;
 	this.nom = nom ;
@@ -31,6 +41,7 @@ public class Eleve {
 	this.date_naiss = date_naiss;
 	this.poids = poids ;
 	this.annee  = annee ;
+	this.resultatses = resultatses;
 	}
 
 
@@ -114,11 +125,20 @@ public class Eleve {
 		this.role = role;
 	}
 	
-	public Set getSetCours() {
-		return setcours;
+
+	public Set<Resultat> getResultatses() {
+		return resultatses;
 	}
-	public void setSetCours(Set cours) {
-		this.setcours= cours;
+	public void setResultatses(Set<Resultat> resultatses) {
+		this.resultatses = resultatses;
+	}
+	
+	public void addResultat(Resultat resultat){
+		this.resultatses.add(resultat);
+	}
+	
+	public void removeResultat(Resultat resultat){
+		this.resultatses.remove(resultat);
 	}
 	 
 }

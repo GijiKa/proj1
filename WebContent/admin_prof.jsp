@@ -33,17 +33,18 @@
 		<div class="col-md-8">
 
 
-			<div class="btn-group">
+				<div class="btn-group">
 
-				<a type="button" class="btn btn-default">Accueil</a> <a
-					type="button" class="btn btn-default">Enseignants</a> <a
-					type="button" class="btn btn-default">Cours</a> <a type="button"
-					class="btn btn-default">Activités sportives</a>
+				<a href="admin.jsp" type="button" class="btn btn-default">Accueil</a>
+
+				<a href="admin_prof.jsp" type="button" class="btn btn-default">Enseignants</a>
+
+				<a href="cours.jsp" type="button" class="btn btn-default">Cours</a>
+
+				<a href="activites_sportives.jsp" type="button" class="btn btn-default">Activités sportives</a>
 
 			</div>
-			<c:if test="false">
-				<div>Bienvenue dans la partie Admin</div>
-			</c:if>
+			
 
 			<div id="tableContainerProfesseurs"></div>
 
@@ -77,7 +78,10 @@
 					},
 					nom : {
 						title : 'Nom',
-						width : '20%'
+						width : '20%',
+						display : function(data) {
+							 return "<a href='admin_details_prof.jsp?id="+data.record.id+"'>"+data.record.nom+"</a>"
+						}
 					},
 					specialite : {
 						title : 'Specialite',
@@ -90,8 +94,9 @@
 					der_prom : {
 						title : 'Dérnière promo',
 						width : '30%',
-						create : false,
-						edit : false
+						edit:true
+					
+						
 					},
 					salaire_base : {
 						title : 'Salaire de base',

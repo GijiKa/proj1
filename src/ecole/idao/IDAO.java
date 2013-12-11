@@ -1,7 +1,9 @@
 package ecole.idao;
 
+import java.io.Serializable;
+
 public interface IDAO<T> {
-	public abstract T find(int id);
+	public abstract T find(Serializable id);
 
 	/**
 	 * Permet de créer une entrée dans la base de données par rapport à un objet
