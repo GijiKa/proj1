@@ -3,7 +3,7 @@ body
 	/*background-image: url(images/design.jpg);*/
 	/*background-repeat:no-repeat;*/
 		font-family: Arial;
-	width:70%;
+	width:100%;
 	font-size: 13px;
 }
 
@@ -74,18 +74,39 @@ border: 1px #666	;
 }
 #pptg_nom
 {
-	color : white ;
-	left:-100%;
-	position:relative;
-	width:150%;
-	padding-top:-20%;
+  color: #FFFFFF;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 150%;
 	
 }
-
-
-
-
-
+#pptg_nom img{
+	width:32px!important;
+	height:32px!important;
+}
+.navbar-brand{
+	  color: #EBEBEB!important;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #000000;
+}
+.nav-tabs, .nav-stacked{
+	margin-bottom:10px;
+	font-size:16px;
+}
+#profil-etud > p{ font-size:24px}
+.col-md-12{
+	margin-top:80px;
+}
+.container-fluid{
+	margin-top:80px;
+}
+.footer{
+	width:600px;
+	position:relative;
+	text-align:center;
+	margin:40px auto;
+}
 
 
 

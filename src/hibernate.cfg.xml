@@ -35,6 +35,7 @@
        <mapping resource="ecole/Eleve.hbm.xml"/>
        <mapping resource="ecole/Professeur.hbm.xml"/>
         <mapping resource="ecole/Resultat.hbm.xml"/>
+        <mapping resource="ecole/Activite.hbm.xml"/>
         
        
      <!--
@@ -42,7 +43,7 @@
    
          <mapping resource="ecole/Resultats.hbm.xml"/>
       <mapping resource="ecole/Resultats.hbm.xml"/>
-	<mapping resource="ecole/Activities.hbm.xml"/>
+	
 
 	<mapping resource="ecole/Resultats.hbm.xml"/> -->
 	    </session-factory>

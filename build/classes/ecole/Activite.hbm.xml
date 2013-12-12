@@ -4,12 +4,11 @@
 <hibernate-mapping>
 
     <class name="ecole.pojo.Activite" table="activites">
-        <composite-id name="compId" class="ecole.pojo.Activite">
-        <key-property name="Niveau" column="NIVEAU" type="int"/>
-        <key-property name="Nom" column="NOM" />
-        </composite-id>
-          
-
+        <composite-id name="id" class="ecole.pojo.ActiviteId">
+        <key-property name="niveau" column="NIVEAU" type="int"/>
+        <key-property name="nom" column="NOM" type="string"/>
+        </composite-id>      
+        
         <property name="equipe"  column ="EQUIPE"/>
 
     </class>

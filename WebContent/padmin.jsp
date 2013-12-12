@@ -19,35 +19,27 @@
 
 <body>
 	<!-- declarer la JSTL -->
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<jsp:include page="head.jsp" />
 
 
 	<div class="container">
 	
 
-		<div class="col-md-13">
+		<div class="col-md-12">
 
 
 <ul class="nav nav-tabs">
-    <li  class="active"><a href="admin.jsp">Accueil</a></li>
-    <li><a href="admin_prof.jsp">Enseignants</a></li>
-    <li><a href="cours.jsp">Cours</a></li>
-    <li><a href="activites_sportives.jsp">Activités sportives</a></li>
+    <li  class="active"><a href="padmin.jsp">Accueil</a></li>
+    <li><a href="pcours.jsp">Cours</a></li>
+    <li><a href="pactivites_sportives.jsp">Activités sportives</a></li>
     
   </ul>
 
 
 			<div id="tableContainerEleve"></div>
-
-		</div>
-
-	</div>
-
-
-			<div id="tableContainerCours"></div>
-
-		</div>
+			<p> Click sur le nom d'un  pour afficher et éditer les notes de l'élève </p> 
+	    	</div>
 
 	</div>
 
@@ -61,38 +53,58 @@
 	<script src="js/jquery.jtable.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#tableContainerCours').jtable({
-
-				title : 'Résultats de cet élève' ,
+			$('#tableContainerEleve').jtable({
+				title : 'Gestion des élèves',
 				actions : {
-					listAction : 'adminreseleve?id_eleve='+<%=request.getParameter("id")%>+'&action=list',
-					createAction : 'adminreseleve?id_eleve='+<%=request.getParameter("id")%>+'&action=create',
-					updateAction : 'adminreseleve?id_eleve='+<%=request.getParameter("id")%>+'&action=update',
-					deleteAction : 'adminreseleve?id_eleve='+<%=request.getParameter("id")%>+'&action=delete',
+					listAction : 'admin?action=list',
+				
 				},
 				fields : {
-					
-					id_eleve : {
+
+					id : {
 						key : true,
 						list : false
 					},
-					id_cours: {
-						key:true,
-						create:true,
-						title : 'Nom du cours',
+					nom : {
+						title : 'Nom',
 						width : '20%',
-						options:"admincours?action=options",
-						list:true
+						display : function(data) {
+							 return "<a href='admin_resultats_eleve.jsp?id="+data.record.id+"'>"+data.record.nom+"</a>"
+						}
 					},
-
-					note : {
-						title : 'Note',
+					prenom : {
+						title : 'Prenom',
 						width : '20%'
-					}
-				}
+					},
+					email : {
+						title : 'email',
+						width : '20%'
+					},
+					date_naiss : {
+						title : 'Date de naissance',
+						width : '30%',
+						create : false,
+						edit : false
+					},
+					poids : {
+						title : 'Poids',
+						width : '20%',
 
+					},
+					annee : {
+						title : 'Annee',
+						width : '20%',
+
+					},
+					mdp : {
+						title : "mot de passe",
+						list : false,
+						edit : false
+					}
+
+				}
 			});
-			$('#tableContainerCours').jtable('load');
+			$('#tableContainerEleve').jtable('load');
 		});
 	</script>
 </body>

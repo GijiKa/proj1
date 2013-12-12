@@ -73,8 +73,13 @@ public class AuthServlet extends HttpServlet {
 					if (professeur.getRole() == 1) {
 
 						System.out.println("Professeur");
+						
+						HttpSession ss = request.getSession();
+						ss.setAttribute("section", professeur);
 
-						response.sendRedirect("prof.jsp");
+						
+
+						response.sendRedirect("prof_etud.jsp");
 
 					} else {
 

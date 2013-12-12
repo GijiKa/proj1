@@ -11,47 +11,28 @@
 
 <body>
 <jsp:include page ="head.jsp"/>
-<div id="etud_img">
-<img src="images/stud.png" width="300" height="100" />
-</div>
-<div id ="banner_menu">
-			 
-					<nav>
-						<ul>
-						 
-							<li>
-							<a href="eleves.jsp" ><font color="#008080"> Mon Profil  </font></a>
-							</li>
-							
-							<li>
-							  <a href="eleve_cours.jsp" >Mes cours/Résultats</a>    
-                             </li>
-							<li>
-						<a href="eleve_sport.jsp" >Mes activités sportives</a> 
-							</li>
-							<li> 
-								<a href="contact.jsp">Contact</a>
-							</li>
-						</ul>
-					</nav>
-	</div>
-    
-    <div id="image">
-    
-    </div>
-    
-<div id="section_etudiant">
-<div class ="btn-group btn-group-justified">
-					<a class ="btn btn-default active" role ="button" href="eleves.jsp" >Mon Profil  </a>
-						
-				      <a class ="btn btn-default" role ="button" href="eleve_cours.jsp" >Mes cours/Résultats</a>    
-                           
-						<a class ="btn btn-default" role ="button" href="eleve_sport.jsp" >Mes activités sportives</a> 
-							
-				     	<a class ="btn btn-default" role ="button"href="contact.jsp">Contact</a>
-					
-</div>
-    <div id ="profil-etud">
+
+
+  
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-md-4">
+			<ul class="nav nav-pills nav-stacked">
+							<li class ="active"><a  role ="button" href="eleves.jsp" >Mon Profil  </a></li>
+								
+						      <li><a role ="button" href="eleve_cours.jsp" >Mes cours/Résultats</a></li>    
+		                           
+								<li><a role ="button" href="eleve_sport.jsp" >Mes activités sportives</a></li> 
+									
+						     	<li><a role ="button"href="contact.jsp">Contact</a></li>
+						     	</ul></div>
+
+
+		</div>
+
+		<div class="col-md-8">
+		
+			   <div id ="profil-etud">
     <p><br/> Bienvenue <strong> ${section.getNom()} ${section.getPrenom()}  </strong> dans votre espace personnel </p><br/>
     Votre Dossier administratif 
     <table class ="table table-hover">
@@ -79,25 +60,14 @@
 
    </table>
     </div>
-      <div id= "mes_actv">
-         <a href="etud_sport.php"><strong>  <font color="#BBCCD4"> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Mes loisirs </font> </strong> </a>
-          <br/> <br/>
-          <img src="images/sport.jpg" width="100%" height="65%">
+
       
-      </div>
-      <div id= "mes_resu">
-         <a href="etud_cours.php"> <strong>  <font color="#BBCCD4">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Mes cours/Mes résultats </font></strong></a>
-          <br/> <br/>
-            <img src="images/cours.jpg" width="100%" height="65%">
-      
-      </div>
-      
-      
+      				
+		</div>
+ 
       
               
         	
-    
-    </div>
 
 
 

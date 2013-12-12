@@ -24,21 +24,31 @@
 
 
 	<div class="container">
-	
 
-		<div class="col-md-13">
 
+		<div class="col-md-12">
+
+
+			<div class="btn-group">
+
+				
+
+				
+
+				
+
+				
+
+			</div>
 
 <ul class="nav nav-tabs">
-    <li  class="active"><a href="admin.jsp">Accueil</a></li>
+    <li><a href="admin.jsp">Accueil</a></li>
     <li><a href="admin_prof.jsp">Enseignants</a></li>
     <li><a href="cours.jsp">Cours</a></li>
-    <li><a href="activites_sportives.jsp">Activités sportives</a></li>
+    <li class="active"><a href="activites_sportives.jsp">Activités sportives</a></li>
     
   </ul>
-
-
-			<div id="tableContainerCours"></div>
+			<div id="tableContainerEleve"></div>
 
 		</div>
 
@@ -54,14 +64,13 @@
 	<script src="js/jquery.jtable.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#tableContainerCours').jtable({
-
-				title : 'Gestion des cours',
+			$('#tableContainerEleve').jtable({
+				title : 'Gestion des élèves',
 				actions : {
-					listAction : 'admindetailsprof?id_prof='+<%=request.getParameter("id")%>+'&action=list',
-					createAction : 'admindetailsprof?id_prof='+<%=request.getParameter("id")%>+'&action=create',
-					updateAction : 'admindetailsprof?id_prof='+<%=request.getParameter("id")%>+'&action=update',
-					deleteAction : 'admindetailsprof?id_prof='+<%=request.getParameter("id")%>+'&action=delete',
+					listAction : 'adminactivitessportives?action=list',
+					createAction : 'adminactivitessportives?action=create',
+					updateAction : 'adminactivitessportives?action=update',
+					deleteAction : 'adminactivitessportives?action=delete'
 				},
 				fields : {
 
@@ -71,21 +80,20 @@
 					},
 					nom : {
 						title : 'Nom',
+						width : '20%',
+					},
+					equipe : {
+						title : 'Equipe',
 						width : '20%'
 					},
-
-					nb_heures : {
-						title : 'nombre heures',
-						width : '20%'
-					},
-					annee : {
-						title : 'Annee',
+					niveau : {
+						title : 'Niveau',
 						width : '20%'
 					}
-				}
 
+				}
 			});
-			$('#tableContainerCours').jtable('load');
+			$('#tableContainerEleve').jtable('load');
 		});
 	</script>
 </body>

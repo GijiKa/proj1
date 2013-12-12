@@ -6,7 +6,7 @@
 	href="style.css" /> -->
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="./css/main.css" />
-<link href="css/metro/crimson/jtable.css" rel="stylesheet"
+<link href="css/metro/blue/jtable.css" rel="stylesheet"
 	type="text/css" />
 <link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet"
 	type="text/css" />
@@ -23,28 +23,18 @@
 	<jsp:include page="head.jsp" />
 
 
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="col-md-4"></div>
+	<div class="container">
+	
+		<div class="col-md-12">
 
 
-		</div>
-
-		<div class="col-md-8">
-
-
-			<div class="btn-group">
-
-				<a href="admin.jsp" type="button" class="btn btn-default">Accueil</a>
-
-				<a href="admin_prof.jsp" type="button" class="btn btn-default">Enseignants</a>
-
-				<a href="cours.jsp" type="button" class="btn btn-default">Cours</a>
-
-				<a href="activites_sportives.jsp" type="button"
-					class="btn btn-default">Activités sportives</a>
-
-			</div>
+			<ul class="nav nav-tabs">
+    <li ><a href="admin.jsp">Accueil</a></li>
+    <li ><a href="admin_prof.jsp">Enseignants</a></li>
+    <li  class="active"><a href="cours.jsp">Cours</a></li>
+    <li><a href="activites_sportives.jsp">Activités sportives</a></li>
+    
+  </ul>
 
 
 			<div id="tableContainerCours"></div>

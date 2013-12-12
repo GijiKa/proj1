@@ -40,9 +40,16 @@
     <servlet-class>ecole.AdminDetailsProfServlet</servlet-class>
   </servlet>
   
-  
-  
    <servlet-mapping>
+    <servlet-name>AdminActivitesSportivesServelet</servlet-name>
+    <url-pattern>/adminactivitessportives</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminActivitesSportivesServelet</servlet-name>
+    <servlet-class>ecole.AdminActivitesSportivesServelet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
     <servlet-name>AdminResultatsEleve</servlet-name>
     <url-pattern>/adminreseleve</url-pattern>
   </servlet-mapping>

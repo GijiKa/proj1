@@ -1,6 +1,7 @@
 package ecole.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -11,6 +12,9 @@ import org.hibernate.criterion.Restrictions;
 import util.HibernateUtil;
 import ecole.idao.IDAO;
 import ecole.pojo.Activite;
+import ecole.pojo.Activite;
+import ecole.pojo.ActiviteId;
+import ecole.pojo.Cours;
 
 public class ActiviteDAO implements IDAO<Activite> {
 
@@ -18,28 +22,42 @@ public class ActiviteDAO implements IDAO<Activite> {
 	public Activite find(Serializable id) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Activite Activite =  (Activite) session.get(Activite.class, id);
-		return Activite;
+	Transaction tx = null;
+	Activite activites=null;
+		
+		try {
+			tx = session.beginTransaction();
+      activites =  (Activite) session.get(Activite.class, id);
+        tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			
+		}
+		
+		return activites;
 	}
 
 	@Override
 	public Activite create(Activite obj) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		Integer ActiviteID = null;
+		ActiviteId ActiviteID = null;
 		Transaction tx = null;
 		
 		try {
 			tx = session.beginTransaction();
 			// action
 	      
-	         ActiviteID = (Integer) session.save(obj); 
+	         ActiviteID = (ActiviteId) session.save(obj); 
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)
 				tx.rollback();
 			e.printStackTrace();
 		} finally {
-			session.close();
+			
 		}
 		return obj;
 	}
@@ -56,7 +74,7 @@ public class ActiviteDAO implements IDAO<Activite> {
 	         if (tx!=null) tx.rollback();
 	         e.printStackTrace(); 
 	      }finally {
-	         session.close(); 
+	         
 	      }
 		return obj;
 	}
@@ -75,9 +93,28 @@ public class ActiviteDAO implements IDAO<Activite> {
 	         if (tx!=null) tx.rollback();
 	         e.printStackTrace(); 
 	      }finally {
-	         session.close(); 
+	         
 	      }
 		
+	}
+	public List<Activite> getAll() {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction tx = null;
+		List<Activite> activites = null;
+		try {
+			tx = session.beginTransaction();
+
+			activites = session.createCriteria(Activite.class).list();
+
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+		}
+
+		return activites;
 	}
 
 

@@ -30,10 +30,9 @@
 
 
 <ul class="nav nav-tabs">
-    <li  class="active"><a href="admin.jsp">Accueil</a></li>
-    <li><a href="admin_prof.jsp">Enseignants</a></li>
-    <li><a href="cours.jsp">Cours</a></li>
-    <li><a href="activites_sportives.jsp">Activités sportives</a></li>
+    <li  class="active"><a href="padmin.jsp">Accueil</a></li>
+    <li><a href="pcours.jsp">Cours</a></li>
+    <li><a href="pactivites_sportives.jsp">Activités sportives</a></li>
     
   </ul>
 
